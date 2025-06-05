@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Breadcrumb from './components/Breadcrumb';
 import VacancyList from './pages/VacancyDetail';
-import VacancyDetail from './pages/VacancyDetail';
+import SampleDetail from './pages/SampleDetail';
 import ApplicantForm from './pages/ApplicantForm';
 import TestPicker from './pages/TestPicker';
 import ApplicantTable from './pages/ApplicantTable';
@@ -17,7 +17,7 @@ function App() {
             <Breadcrumb />
             <Routes>
             <Route path="/" element={<VacancyList />} />
-            <Route path="/detail" element={<VacancyDetail />} />
+            <Route path="/sample" element={<SampleDetail />} />
             <Route path="/form" element={<ApplicantForm />} />
             <Route path="/tests" element={<TestPicker />} />
             <Route path="/applicants" element={<ApplicantTable />} />

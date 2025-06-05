@@ -1,46 +1,46 @@
-// src/pages/VacancyDetail.tsx
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 
-type Vacancy = {
-  id: string;
-  title: string;
-  location: string;
-  salary: string;
-  desc: string;
-};
-
-const VacancyDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const [vacancy, setVacancy] = useState<Vacancy | null>(null);
+const SampleDetail = () => {
   const [isSaved, setIsSaved] = useState(false);
 
-  useEffect(() => {
-    fetch(`/api/vacancies/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVacancy(data.vacancy));
-  }, [id]);
-
   const handleSave = () => setIsSaved(!isSaved);
-
-  if (!vacancy) return <p className="text-center mt-10">Loading...</p>;
 
   return (
     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-2xl">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800">{vacancy.title}</h1>
-        <p className="text-gray-500 mt-1">Location: {vacancy.location}</p>
+        <h1 className="text-3xl font-bold text-gray-800">Frontend Developer</h1>
+        <p className="text-gray-500 mt-1">Posted: June 5, 2025 • Remote</p>
       </div>
 
       <div className="space-y-4 text-gray-700">
         <div>
           <h2 className="font-semibold text-lg">Description</h2>
-          <p>{vacancy.desc}</p>
+          <p>Build and maintain UI components, collaborate with backend developers, and ensure responsive design.</p>
         </div>
 
         <div>
           <h2 className="font-semibold text-lg">Salary</h2>
-          <p>{vacancy.salary}</p>
+          <p>$3,000 – $4,000 / month</p>
+        </div>
+
+        <div>
+          <h2 className="font-semibold text-lg">Location</h2>
+          <p>Remote (Timezone flexible)</p>
+        </div>
+
+        <div>
+          <h2 className="font-semibold text-lg">Benefits</h2>
+          <ul className="list-disc pl-5">
+            <li>Health insurance</li>
+            <li>Work-from-home stipend</li>
+            <li>Annual bonuses</li>
+            <li>Learning & Development budget</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="font-semibold text-lg">Contact</h2>
+          <p>Email: <a href="mailto:hr@company.com" className="text-blue-600 underline">hr@company.com</a></p>
         </div>
       </div>
 
@@ -64,4 +64,4 @@ const VacancyDetail = () => {
   );
 };
 
-export default VacancyDetail;
+export default SampleDetail;

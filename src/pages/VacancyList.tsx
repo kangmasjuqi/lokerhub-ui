@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Vacancy = {
   id: number;
@@ -78,9 +79,11 @@ const VacancyList = () => {
               💰 <strong>Salary:</strong> {job.salary}
             </p>
             <p className="text-gray-700 mt-2 text-sm">{job.desc}</p>
-            <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">
-              View Details
-            </button>
+            <Link to={`/detail/${job.id}`}>
+                <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm">
+                View Details
+                </button>
+            </Link>
           </div>
         ))}
       </div>
