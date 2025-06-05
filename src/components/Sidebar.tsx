@@ -19,7 +19,8 @@ const Sidebar = ({ closeSidebar }: { closeSidebar?: () => void }) => (
       )}
     </div>
     <nav className="space-y-2 text-gray-800">
-      <NavItem to="/" icon={<Briefcase size={18} />} label="Vacancy Detail" close={closeSidebar} />
+      <NavItem to="/" icon={<Briefcase size={18} />} label="Vacancy List" close={closeSidebar} />
+      <NavItem to="/detail" icon={<Briefcase size={18} />} label="Vacancy Detail" close={closeSidebar} />
       <NavItem to="/form" icon={<FormInput size={18} />} label="Applicant Form" close={closeSidebar} />
       <NavItem to="/tests" icon={<ListChecks size={18} />} label="Test Picker" close={closeSidebar} />
       <NavItem to="/applicants" icon={<Users size={18} />} label="Applicants List" close={closeSidebar} />

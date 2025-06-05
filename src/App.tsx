@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Breadcrumb from './components/Breadcrumb';
+import VacancyList from './pages/VacancyDetail';
 import VacancyDetail from './pages/VacancyDetail';
 import ApplicantForm from './pages/ApplicantForm';
 import TestPicker from './pages/TestPicker';
@@ -15,7 +16,8 @@ function App() {
         <div className="flex-1 p-6">
             <Breadcrumb />
             <Routes>
-            <Route path="/" element={<VacancyDetail />} />
+            <Route path="/" element={<VacancyList />} />
+            <Route path="/detail" element={<VacancyDetail />} />
             <Route path="/form" element={<ApplicantForm />} />
             <Route path="/tests" element={<TestPicker />} />
             <Route path="/applicants" element={<ApplicantTable />} />

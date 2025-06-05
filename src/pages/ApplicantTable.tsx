@@ -16,7 +16,7 @@ const ApplicantTable = () => {
   const [sortBy, setSortBy] = useState<"score" | "minSalary" | null>(null);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-  const limit = 5;
+  const limit = 10;
   const totalPages = Math.ceil(applicants.length / limit);
 
   const sortData = () => {
