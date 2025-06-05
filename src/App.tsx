@@ -9,18 +9,20 @@ import './index.css';
 
 function App() {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <div className="flex-1 p-6">
-        <Breadcrumb />
-        <Routes>
-          <Route path="/" element={<VacancyDetail />} />
-          <Route path="/form" element={<ApplicantForm />} />
-          <Route path="/tests" element={<TestPicker />} />
-          <Route path="/applicants" element={<ApplicantTable />} />
-        </Routes>
+    <body className="dark:bg-gray-900 dark:text-white">
+      <div className="flex min-h-screen">
+        <Sidebar />
+        <div className="flex-1 p-6">
+            <Breadcrumb />
+            <Routes>
+            <Route path="/" element={<VacancyDetail />} />
+            <Route path="/form" element={<ApplicantForm />} />
+            <Route path="/tests" element={<TestPicker />} />
+            <Route path="/applicants" element={<ApplicantTable />} />
+            </Routes>
+        </div>
       </div>
-    </div>
+    </body>
   );
 }
 
