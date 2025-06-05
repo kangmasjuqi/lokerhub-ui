@@ -10,6 +10,17 @@ type Vacancy = {
   desc: string;
 };
 
+// EXPECTED typical API response 
+// {
+//   "vacancy": {
+//     "id": "1",
+//     "title": "Software Engineer with ID 1",
+//     "location": "New York",
+//     "salary": "90,000 - 120,000",
+//     "desc": "Build scalable backend systems."
+//   }
+// }
+
 const VacancyDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [vacancy, setVacancy] = useState<Vacancy | null>(null);
